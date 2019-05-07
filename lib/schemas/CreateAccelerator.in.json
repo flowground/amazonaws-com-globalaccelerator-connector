@@ -1,0 +1,71 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "Enabled": {
+                    "description": "<p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p> <p>If the value is set to true, an accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>",
+                    "type": "boolean"
+                },
+                "IdempotencyToken": {
+                    "description": "A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of an accelerator.",
+                    "maxLength": 255,
+                    "type": "string"
+                },
+                "IpAddressType": {
+                    "description": "The value for the address type must be IPv4. ",
+                    "enum": [
+                        "IPV4"
+                    ],
+                    "type": "string"
+                },
+                "Name": {
+                    "description": "The name of an accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.",
+                    "maxLength": 255,
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "IdempotencyToken"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

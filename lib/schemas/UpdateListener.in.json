@@ -1,0 +1,94 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "ClientAffinity": {
+                    "description": "<p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications, regardless of the port and protocol of the client request. Clienty affinity gives you control over whether to always route each client to the same specific endpoint.</p> <p>AWS Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client affinity is <code>NONE</code>, Global Accelerator uses the \"five-tuple\" (5-tuple) properties—source IP address, source port, destination IP address, destination port, and protocol—to select the hash value, and then chooses the best endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not be always routed to the same endpoint because the hash value changes. </p> <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code> instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the \"two-tuple\" (2-tuple) properties— source (client) IP address and destination IP address—to select the hash value.</p> <p>The default value is <code>NONE</code>.</p>",
+                    "enum": [
+                        "NONE",
+                        "SOURCE_IP"
+                    ],
+                    "type": "string"
+                },
+                "ListenerArn": {
+                    "description": "The Amazon Resource Name (ARN) of the listener to update.",
+                    "maxLength": 255,
+                    "type": "string"
+                },
+                "PortRanges": {
+                    "description": "The updated list of port ranges for the connections from clients to the accelerator.",
+                    "items": {
+                        "description": "A complex type for a range of ports for a listener.",
+                        "properties": {
+                            "FromPort": {
+                                "description": "The first port in the range of ports, inclusive.",
+                                "maximum": 65535,
+                                "minimum": 1,
+                                "type": "integer"
+                            },
+                            "ToPort": {
+                                "description": "The last port in the range of ports, inclusive.",
+                                "maximum": 65535,
+                                "minimum": 1,
+                                "type": "integer"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "maxItems": 10,
+                    "minItems": 1,
+                    "type": "array"
+                },
+                "Protocol": {
+                    "description": "The updated protocol for the connections from clients to the accelerator.",
+                    "enum": [
+                        "TCP",
+                        "UDP"
+                    ],
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ListenerArn"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

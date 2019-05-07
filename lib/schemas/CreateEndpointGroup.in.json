@@ -1,0 +1,128 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "EndpointConfigurations": {
+                    "description": "The list of endpoint objects.",
+                    "items": {
+                        "description": "A complex type for endpoints.",
+                        "properties": {
+                            "EndpointId": {
+                                "description": "An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP address allocation ID.",
+                                "maxLength": 255,
+                                "type": "string"
+                            },
+                            "Weight": {
+                                "description": "The weight associated with the endpoint. When you add weights to endpoints, you configure AWS Global Accelerator to route traffic based on proportions that you specify. For example, you might specify endpoint weights of 4, 5, 5, and 6 (sum=20). The result is that 4/20 of your traffic, on average, is routed to the first endpoint, 5/20 is routed both to the second and third endpoints, and 6/20 is routed to the last endpoint. For more information, see <a href=\"https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoints-endpoint-weights.html\">Endpoint Weights</a> in the <i>AWS Global Accelerator Developer Guide</i>.",
+                                "maximum": 255,
+                                "minimum": 0,
+                                "type": "integer"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "maxItems": 10,
+                    "minItems": 0,
+                    "type": "array"
+                },
+                "EndpointGroupRegion": {
+                    "description": "The name of the AWS Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.",
+                    "maxLength": 255,
+                    "type": "string"
+                },
+                "HealthCheckIntervalSeconds": {
+                    "description": "The time—10 seconds or 30 seconds—between each health check for an endpoint. The default value is 30.",
+                    "maximum": 30,
+                    "minimum": 10,
+                    "type": "integer"
+                },
+                "HealthCheckPath": {
+                    "description": "If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The default value is slash (/).",
+                    "maxLength": 255,
+                    "type": "string"
+                },
+                "HealthCheckPort": {
+                    "description": "The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port is the listener port that this endpoint group is associated with. If listener port is a list of ports, Global Accelerator uses the first port in the list.",
+                    "maximum": 65535,
+                    "minimum": 1,
+                    "type": "integer"
+                },
+                "HealthCheckProtocol": {
+                    "description": "The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.",
+                    "enum": [
+                        "TCP",
+                        "HTTP",
+                        "HTTPS"
+                    ],
+                    "type": "string"
+                },
+                "IdempotencyToken": {
+                    "description": "A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.",
+                    "maxLength": 255,
+                    "type": "string"
+                },
+                "ListenerArn": {
+                    "description": "The Amazon Resource Name (ARN) of the listener.",
+                    "maxLength": 255,
+                    "type": "string"
+                },
+                "ThresholdCount": {
+                    "description": "The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3.",
+                    "maximum": 10,
+                    "minimum": 1,
+                    "type": "integer"
+                },
+                "TrafficDialPercentage": {
+                    "description": "<p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for this listener. </p> <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p> <p>The default value is 100.</p>",
+                    "format": "float",
+                    "maximum": 100,
+                    "minimum": 0,
+                    "type": "number"
+                }
+            },
+            "required": [
+                "ListenerArn",
+                "EndpointGroupRegion",
+                "IdempotencyToken"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}
