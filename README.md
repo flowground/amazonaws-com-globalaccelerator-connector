@@ -5,7 +5,7 @@
 A generated **flow**ground connector for the AWS Global Accelerator API (version 2018-08-08).
 
 Generated from: https://api.apis.guru/v2/specs/amazonaws.com/globalaccelerator/2018-08-08/swagger.json<br/>
-Generated at: 2019-05-07T17:35:41+03:00
+Generated at: 2019-07-08T14:12:57+03:00
 
 ## API Description
 
@@ -17,7 +17,8 @@ Supported authorization schemes:
 - API Key
 ## Actions
 
-### Create an accelerator. An accelerator includes one or more listeners that process inbound connections and direct traffic to one or more endpoint groups, each of which includes endpoints, such as Network Load Balancers. To see an AWS CLI example of creating an accelerator, scroll down to <b>Example</b>.
+### CreateAccelerator
+> Create an accelerator. An accelerator includes one or more listeners that process inbound connections and direct traffic to one or more endpoint groups, each of which includes endpoints, such as Network Load Balancers. To see an AWS CLI example of creating an accelerator, scroll down to <b>Example</b>.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -30,7 +31,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Create an endpoint group for the specified listener. An endpoint group is a collection of endpoints in one AWS Region. To see an AWS CLI example of creating an endpoint group, scroll down to <b>Example</b>.
+### CreateEndpointGroup
+> Create an endpoint group for the specified listener. An endpoint group is a collection of endpoints in one AWS Region. To see an AWS CLI example of creating an endpoint group, scroll down to <b>Example</b>.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -43,7 +45,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Create a listener to process inbound connections from clients to an accelerator. Connections arrive to assigned static IP addresses on a port, port range, or list of port ranges that you specify. To see an AWS CLI example of creating a listener, scroll down to <b>Example</b>.
+### CreateListener
+> Create a listener to process inbound connections from clients to an accelerator. Connections arrive to assigned static IP addresses on a port, port range, or list of port ranges that you specify. To see an AWS CLI example of creating a listener, scroll down to <b>Example</b>.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -56,7 +59,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Delete an accelerator. Note: before you can delete an accelerator, you must disable it and remove all dependent resources (listeners and endpoint groups).
+### DeleteAccelerator
+> Delete an accelerator. Note: before you can delete an accelerator, you must disable it and remove all dependent resources (listeners and endpoint groups).<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -69,7 +73,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Delete an endpoint group from a listener.
+### DeleteEndpointGroup
+> Delete an endpoint group from a listener.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -82,7 +87,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Delete a listener from an accelerator.
+### DeleteListener
+> Delete a listener from an accelerator.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -95,7 +101,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Describe an accelerator. To see an AWS CLI example of describing an accelerator, scroll down to <b>Example</b>.
+### DescribeAccelerator
+> Describe an accelerator. To see an AWS CLI example of describing an accelerator, scroll down to <b>Example</b>.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -108,7 +115,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Describe the attributes of an accelerator.
+### DescribeAcceleratorAttributes
+> Describe the attributes of an accelerator.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -121,7 +129,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Describe an endpoint group.
+### DescribeEndpointGroup
+> Describe an endpoint group.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -134,7 +143,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Describe a listener.
+### DescribeListener
+> Describe a listener.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -147,7 +157,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### List the accelerators for an AWS account.
+### ListAccelerators
+> List the accelerators for an AWS account.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -160,7 +171,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### List the endpoint groups that are associated with a listener.
+### ListEndpointGroups
+> List the endpoint groups that are associated with a listener.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -173,7 +185,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### List the listeners for an accelerator.
+### ListListeners
+> List the listeners for an accelerator.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -186,7 +199,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Update an accelerator.
+### UpdateAccelerator
+> Update an accelerator.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -199,7 +213,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Update the attributes for an accelerator. To see an AWS CLI example of updating an accelerator to enable flow logs, scroll down to <b>Example</b>.
+### UpdateAcceleratorAttributes
+> Update the attributes for an accelerator. To see an AWS CLI example of updating an accelerator to enable flow logs, scroll down to <b>Example</b>.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -212,7 +227,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Update an endpoint group. To see an AWS CLI example of updating an endpoint group, scroll down to <b>Example</b>.
+### UpdateEndpointGroup
+> Update an endpoint group. To see an AWS CLI example of updating an endpoint group, scroll down to <b>Example</b>.<br/>
 
 #### Input Parameters
 * `Action` - _required_
@@ -225,7 +241,8 @@ Supported authorization schemes:
 * `X-Amz-Signature` - _optional_
 * `X-Amz-SignedHeaders` - _optional_
 
-### Update a listener.
+### UpdateListener
+> Update a listener.<br/>
 
 #### Input Parameters
 * `Action` - _required_
